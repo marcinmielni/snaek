@@ -7,11 +7,11 @@ BACKGROUND_COLOR = (0, 0, 0)        #color theme
 WHITE = (255, 255, 255)
 BLUE = (0, 0, 200)
 
-#TODO: speed does not reset after game ends
 #TODO: add point counter
 #TODO: add accel when pushing arrow in same direction
 #TODO: add turning back
 #TODO: fix, when exiting game it still runs in the background
+#TODO: add option to exit with esc during game
 
 
 def msg(surface, str, x, y, fontSize = 64):
@@ -92,9 +92,10 @@ def main(size = 50, resolution = 1000):
             clock.tick(clockTick)
             pygame.display.update()
 
-        
-        clock.tick(100)
+        clockTick = 5 #reset snake speed after game over
+        clock.tick(100)  #wtf does this do?
     pygame.quit()
     quit()
 
 main()
+
