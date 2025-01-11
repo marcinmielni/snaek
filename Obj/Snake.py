@@ -1,6 +1,7 @@
 import random
 import pygame
 
+
 class Snake:
     def __init__(self, x, y, segmentSize, color = (255, 255, 255)):
         self.x = x                    #head coordinates
@@ -40,19 +41,3 @@ class Snake:
             if head == seg:
                 return True
         return False
-    
-
-class Food:
-    def __init__(self, size, mapSize, color = (0,0, 200)):
-        self.x = random.randrange(0, mapSize, size)
-        self.y = random.randrange(0, mapSize, size)
-        self.size = size
-        self.mapSize = mapSize
-        self.color = color
-
-    def GetNew(self):              #selecting random position for food object, concluding that map is a square (not rectangle)
-        self.x = random.randrange(0, self.mapSize, self.size)
-        self.y = random.randrange(0, self.mapSize, self.size)
-
-    def Draw(self, surface):
-        pygame.draw.rect(surface, self.color, [self.x, self.y, self.size, self.size])

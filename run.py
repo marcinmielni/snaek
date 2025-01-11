@@ -1,11 +1,17 @@
 import pygame
-import random
-from Obj.objects import Snake, Food
+from Obj.Food import Food
+from Obj.Snake import Snake
 
 
 BACKGROUND_COLOR = (0, 0, 0)        #color theme
 WHITE = (255, 255, 255)
 BLUE = (0, 0, 200)
+
+#TODO: speed does not reset after game ends
+#TODO: add point counter
+#TODO: add accel when pushing arrow in same direction
+#TODO: add turning back
+#TODO: fix, when exiting game it still runs in the background
 
 
 def msg(surface, str, x, y, fontSize = 64):
